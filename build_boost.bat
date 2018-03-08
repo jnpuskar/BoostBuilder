@@ -20,7 +20,7 @@ ECHO ########## -BUILDING BOOST LIBRARIES Static 32bit 					 ###########
 ECHO ###############################################################################
 if exist .\stage_x86 rmdir .\stage_x86 /s/q
 b2.exe --toolset=msvc-14.1 --clean-all
-b2.exe --toolset=msvc-14.1 architecture=x86 link=static address-model=32 --stagedir=".\stage_x86" threading=multi --build-type=complete stage
+b2.exe --toolset=msvc-14.1 architecture=x86 link=static address-model=32 define=BOOST_CONFIG_SUPPRESS_OUTDATED_MESSAGE=1 --stagedir=".\stage_x86" threading=multi --build-type=complete stage 
 if not exist .\stage\lib md .\stage\lib
 move /y .\stage_x86\lib\*.* .\stage\lib
 if exist .\bin.v2 rmdir .\bin.v2 /s/q
@@ -31,7 +31,7 @@ ECHO ########## -BUILDING BOOST LIBRARIES Static 64bit					############
 ECHO ###############################################################################
 if exist .\stage_x64 rmdir \stage_x64 /s/q
 b2.exe --toolset=msvc-14.1 --clean-all
-b2.exe --toolset=msvc-14.1 architecture=x86 link=static address-model=64 --stagedir=".\stage_x64" threading=multi --build-type=complete stage
+b2.exe --toolset=msvc-14.1 architecture=x86 link=static address-model=64 define=BOOST_CONFIG_SUPPRESS_OUTDATED_MESSAGE=1 --stagedir=".\stage_x64" threading=multi --build-type=complete stage
 if not exist .\stage\lib md .\stage\lib
 move /y .\stage_x64\lib\*.* .\stage\lib
 if exist .\bin.v2 rmdir .\bin.v2 /s/q
