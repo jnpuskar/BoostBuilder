@@ -34,7 +34,7 @@ if exist .\stage_x64 rmdir \stage_x64 /s/q
 b2.exe --toolset=msvc-14.1 --clean-all
 b2.exe --toolset=msvc-14.1 architecture=x86 link=static address-model=64 --stagedir=".\stage_x64" threading=multi --build-type=complete stage
 if not exist .\stage\lib md .\stage\lib
-move /y .\stage_x64\lib\*.* ..\stage\lib
+move /y .\stage_x64\lib\*.* .\stage\lib
 if exist .\bin.v2 rmdir .\bin.v2 /s/q
 if exist .\stage_x64 rmdir .\stage_x64 /s/q
 
