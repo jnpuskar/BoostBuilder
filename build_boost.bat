@@ -13,7 +13,6 @@ if exist .\b2.exe del .\b2.exe
 if exist .\bjam.exe del .\bjam.exe
 call .\bootstrap.bat
 if exist .\bin.v2 rmdir .\bin.v2 /s/q
-if exist ..\bin rmdir ..\bin /s/q
 if exist .\stage rmdir .\stage /s/q
 
 ECHO ###############################################################################
